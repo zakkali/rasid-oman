@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>راصد عُمان المطور | الرصد الذكي</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link class="rtl" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4f8; }
         .hero { background: linear-gradient(135deg, #1a73e8, #0052cc); color: white; padding: 60px 0; text-align: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;}
@@ -21,11 +21,11 @@
 
         .hero h1 { font-weight: bold; font-size: 3rem; margin-bottom: 15px; }
         .hero p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; }
-        .btn-download { border-radius: 30px; padding: 15px 35px; font-weight: bold; font-size: 1.1rem; margin: 10px; transition: 0.3s; }
+        .btn-download { border-radius: 30px; padding: 15px 35px; font-weight: bold; font-size: 1.1rem; margin: 10px; transition: 0.3s; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
         .btn-chrome { background-color: white; color: #1a73e8; border: none; }
-        .btn-chrome:hover { background-color: #e8f0fe; }
+        .btn-chrome:hover { background-color: #e8f0fe; transform: translateY(-2px); }
         .btn-firefox { background-color: #ff9500; color: white; border: none; }
-        .btn-firefox:hover { background-color: #e08300; }
+        .btn-firefox:hover { background-color: #e08300; color: white; transform: translateY(-2px); }
         
         .feature-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; margin-bottom: 30px; height: 100%; border-top: 4px solid #1a73e8; }
         .feature-icon { font-size: 3rem; margin-bottom: 15px; }
@@ -42,7 +42,7 @@
             <p>النسخة الأكثر ذكاءً وأماناً لرصد الدرجات لمنصتي "نور" و"البوابة التعليمية".</p>
             
             <a href="https://chromewebstore.google.com/detail/peadckbnebdknkflhhkifaffmfcnkjnj" class="btn btn-download btn-chrome" target="_blank">📥 تثبيت لمتصفح Chrome</a>
-            <a href="https://addons.mozilla.org/en-US/firefox/addon/%D8%B1%D8%A7%D8%B5%D8%AF-%D8%B9-%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D9%85%D8%B7%D9%88%D8%B1/" target="_blank">🦊 تثبيت لمتصفح Firefox</a>
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/%D8%B1%D8%A7%D8%B5%D8%AF-%D8%B9-%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D9%85%D8%B7%D9%88%D8%B1/" class="btn btn-download btn-firefox" target="_blank">🦊 تثبيت لمتصفح Firefox</a>
         </div>
     </header>
 
@@ -89,8 +89,7 @@
 
     <footer>
         <div class="container">
-            <p>تم التطوير لخدمة المعلمين في سلطنة عُمان |
- زكي المطعني البكري</p>
+            <p>تم التطوير لخدمة المعلمين في سلطنة عُمان | زكي المطعني البكري</p>
         </div>
     </footer>
 
