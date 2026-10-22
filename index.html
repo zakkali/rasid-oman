@@ -3,185 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إضافة مُحَضِّر نور | التعبئة التلقائية</title>
-    <!-- استدعاء خط القاهرة -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>إضافة رَصْد - لرصد الدرجات الذكي</title>
     <style>
-        :root {
-            --primary-blue: #2b6cb0;
-            --light-blue: #ebf8ff;
-            --chrome-color: #4285f4;
-            --firefox-color: #ff7139;
-            --youtube-color: #ff0000;
-            --text-dark: #2d3748;
-            --text-gray: #4a5568;
-        }
-
+        /* أنماط بسيطة ومريحة للعين */
         body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f7fafc;
-            color: var(--text-dark);
+            font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
             margin: 0;
-            padding: 0;
-            line-height: 1.8;
+            padding: 20px;
+            direction: rtl;
         }
-
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-
-        /* الجزء العلوي (الترويسة) */
         .hero {
             text-align: center;
-            background-color: white;
-            padding: 50px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            margin-bottom: 40px;
-            border-top: 5px solid var(--primary-blue);
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
         }
-
         .hero h1 {
-            color: var(--primary-blue);
-            font-size: 2.8rem;
+            font-size: 2.2rem;
+            color: #1a365d;
             margin-bottom: 10px;
-            font-weight: 800;
         }
-
-        .hero p.subtitle {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 30px;
+        .subtitle {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4a5568;
         }
-
         .highlight {
-            color: #38a169;
-            font-weight: 700;
-            background-color: #f0fff4;
-            padding: 2px 8px;
-            border-radius: 5px;
+            color: #2b6cb0;
+            font-weight: bold;
         }
-
-        /* الأزرار والتأثيرات الحركية */
         .buttons-container {
             display: flex;
-            justify-content: center;
-            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 25px;
         }
-
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 15px 25px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: white;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-
-        .btn-chrome { background-color: var(--chrome-color); }
-        .btn-firefox { background-color: var(--firefox-color); }
-        .btn-youtube { background-color: var(--youtube-color); }
-
-        /* حركة النبض لزر التحميل */
-        .pulse-anim {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .btn:hover.pulse-anim {
-            animation: none; /* إيقاف النبض عند التمرير */
-            transform: translateY(-5px) scale(1.05);
-        }
-
-        /* قسم الشرح والملاحظات */
-        .content-section {
-            background-color: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-            margin-bottom: 40px;
-        }
-
-        .content-section h2 {
-            color: var(--primary-blue);
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--light-blue);
-            padding-bottom: 10px;
-            margin-bottom: 25px;
-        }
-
-        .steps {
-            list-style: none;
-            padding: 0;
-        }
-
-        .steps li {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            position: relative;
-            padding-right: 35px;
-        }
-
-        .steps li::before {
-            content: '✅';
-            position: absolute;
-            right: 0;
-            top: 2px;
-        }
-
-        .alert-box {
-            background-color: #fffaf0;
-            border-right: 4px solid #ed8936;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            font-size: 1.05rem;
-        }
-
-        /* الفوتر (الدعاء والحقوق) */
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background-color: var(--light-blue);
-            border-radius: 20px;
-            color: var(--primary-blue);
-        }
-
-        .prayer {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2c7a7b;
-            margin-bottom: 15px;
-        }
-
-        .credits {
+            padding: 12px 24px;
             font-size: 1rem;
-            color: var(--text-gray);
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: #fff;
         }
-
-        /* استجابة الشاشات الصغيرة */
+        .btn-chrome { background-color: #2563eb; }
+        .btn-chrome:hover { background-color: #1d4ed8; }
+        .btn-firefox { background-color: #d97706; }
+        .btn-firefox:hover { background-color: #b45309; }
+        .btn-youtube { background-color: #dc2626; }
+        .btn-youtube:hover { background-color: #b91c1c; }
+        
+        .content-section {
+            margin: 30px 0;
+        }
+        .content-section h2 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .steps {
+            padding-right: 20px;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+        .steps li {
+            margin-bottom: 10px;
+        }
+        .alert-box {
+            background-color: #ebf8ff;
+            border-right: 4px solid #3182ce;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            color: #2b6cb0;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        .prayer {
+            font-size: 1.1rem;
+            color: #2f855a;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .credits {
+            color: #718096;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
         @media (max-width: 600px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 1.8rem; }
             .btn { width: 100%; }
         }
     </style>
@@ -191,18 +121,18 @@
     <div class="container">
         <!-- الترويسة الرئيسية -->
         <header class="hero">
-            <h1>إضافة مُحَضِّر نور ⚡</h1>
+            <h1>إضافة رَصْد ⚡</h1>
             <p class="subtitle">
-                وفر وقتك وجهدك الثمين! حوّل عملية التحضير اليومي على منصة نور من 
-                <span class="highlight">دقائق طويلة ومملة</span> إلى 
+                وفر وقتك وجهدك الثمين! رصّد درجات طلابك على منصة نور والبوابة التعليمية من 
+                <span class="highlight">ساعات طويلة من التدقيق اليدوي</span> إلى 
                 <span class="highlight">ثوانٍ معدودة</span> بضغطة زر واحدة.
             </p>
 
             <div class="buttons-container">
-                <a href="https://chromewebstore.google.com/detail/kkfkgpkmdfodigihdabklboehppipgjj" target="_blank" class="btn btn-chrome pulse-anim">
-                    🌐 إضافة لـ Chrome
+                <a href="https://chromewebstore.google.com/detail/%D8%B1%D9%8E%D8%B5%D9%92%D8%AF/peadckbnebdknkflhhkifaffmfcnkjnj?hl=en" target="_blank" class="btn btn-chrome pulse-anim">
+                    🌐 إضافة لـ Chrome / Edge
                 </a>
-                <a href="https://addons.mozilla.org/en-US/firefox/addon/noor-prep/" target="_blank" class="btn btn-firefox pulse-anim">
+                <a href="https://chromewebstore.google.com/detail/%D8%B1%D9%8E%D8%B5%D9%92%D8%AF/peadckbnebdknkflhhkifaffmfcnkjnj?hl=en" target="_blank" class="btn btn-firefox pulse-anim">
                     🦊 إضافة لـ Firefox
                 </a>
                 <a href="https://youtu.be/3qtJYhzDD5c" target="_blank" class="btn btn-youtube">
@@ -215,17 +145,19 @@
         <section class="content-section">
             <h2>كيف تعمل الأداة؟</h2>
             <ul class="steps">
-                <li>قم بتثبيت الإضافة على متصفحك المفضل (كروم أو فايرفوكس).</li>
-                <li>افتح صفحة <b>إضافة تحضير جديد</b> في منصة نور التعليمية.</li>
-                <li>ستلاحظ ظهور زر عائم جديد باسم <b>"رفع عبر مُحَضِّر نور"</b>.</li>
-                <li>انقر على الزر، واختر ملف التحضير الخاص بك بصيغة Word (.docx).</li>
-                <li>سيتم قراءة الملف وتوزيع النصوص على الحقول المخصصة في المنصة تلقائياً فوراً!</li>
+                <li>قم بتثبيت الإضافة على متصفحك المفضل (كروم، إيدج، أو فايرفوكس).</li>
+                <li>افتح صفحة <b>رصد الدرجات</b> في منصة نور التعليمية أو البوابة التعليمية.</li>
+                <li>انقر على زر الإضافة الشاشي <b>"رَصْد"</b> للبدء.</li>
+                <li>اختر ملف الأكسيل (Excel) الذي يحتوي على درجات الطلاب.</li>
+                <li>تقوم الأداة بمطابقة أسماء الطلاب ورصد درجاتهم تلقائياً وبكل دقة في الحقول المخصصة!</li>
             </ul>
 
             <div class="alert-box">
-                <strong>💡 ملاحظة هامة لضمان الدقة:</strong>
+                <strong>💡 مميزات وملاحظات هامة لضمان الدقة:</strong>
                 <br>
-                لكي تقوم الأداة بقراءة بيانات التحضير وتوزيعها بشكل سليم وبدون أي أخطاء، <b>يُفضل دائماً استخدام قالب التحضير الرسمي المعتمد من وزارة التعليم</b> عند كتابة تحضيرك على برنامج الوورد.
+                • تُتعامل الإضافة مع كشوفات الأكسيل سواء كانت مكتوبة في <b>صفحة واحدة أو مقسمة على عدة صفحات</b>.<br>
+                • لا تتأثر الإضافة بترتيب الأسماء؛ فهي تقرأ درجات كل طالب وتطابقها مع اسمه في النظام حتى وإن كانت الأسماء <b>غير مرتبة</b>.<br>
+                • يُفضل دائماً التأكد من تطابق رسم أسماء الطلاب في الكشف مع النظام لضمان أعلى نسبة دقة.
             </div>
         </section>
 
