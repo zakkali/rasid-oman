@@ -8,10 +8,11 @@
     <!-- استدعاء مكتبة البوتستراب -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
     
-    <!-- استدعاء خط كايرو من جوجل -->
+    <!-- استدعاء خط كايرو وأيقونات بوتستراب -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     
     <style>
         /* تطبيق خط كايرو على كامل الموقع */
@@ -28,12 +29,39 @@
             border-bottom-left-radius: 50px; 
             border-bottom-right-radius: 50px;
         }
-        
-        /* تنسيق الأيقونة */
-        .app-icon { 
-            width: 120px; 
-            height: 120px; 
-            border-radius: 25px; 
+
+        /* تنسيق أزرار التحميل */
+        .download-btn {
+            padding: 12px 25px;
+            font-weight: 700;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-chrome {
+            background-color: #ffffff;
+            color: #1a73e8;
+        }
+
+        .btn-chrome:hover {
+            background-color: #e8f0fe;
+            color: #0052cc;
+            transform: translateY(-2px);
+        }
+
+        .btn-firefox {
+            background-color: #ff7139;
+            color: #ffffff;
+        }
+
+        .btn-firefox:hover {
+            background-color: #e0531c;
+            color: #ffffff;
+            transform: translateY(-2px);
         }
 
         /* تنسيق قسم الفيديو */
@@ -68,6 +96,21 @@
         <div class="container">
             <h1 class="display-5 fw-bold mb-3">إضافة راصد عُمان المطور</h1>
             <p class="lead mb-4">الحل الأمثل لرصد درجات الطلاب تلقائياً من ملفات الإكسيل على منصة نور والبوابة التعليمية[cite: 1].</p>
+            
+            <!-- أزرار تحميل الأداة -->
+            <div class="d-flex justify-content-center gap-3 flex-wrap my-4">
+                <!-- استبدل LINK_TO_CHROME_STORE برابط الإضافة على متجر كروم -->
+                <a href="LINK_TO_CHROME_STORE" target="_blank" class="download-btn btn-chrome">
+                    <i class="bi bi-browser-chrome fs-5"></i>
+                    تثبيت لمتصفح كروم / إيدج
+                </a>
+
+                <!-- استبدل LINK_TO_FIREFOX_STORE برابط الإضافة على متجر فايرفوكس -->
+                <a href="LINK_TO_FIREFOX_STORE" target="_blank" class="download-btn btn-firefox">
+                    <i class="bi bi-browser-firefox fs-5"></i>
+                    تثبيت لمتصفح فايرفوكس
+                </a>
+            </div>
         </div>
     </div>
 
