@@ -6,13 +6,14 @@
     <title>إضافة رَصْد - لرصد الدرجات الذكي</title>
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            --firefox-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            --youtube-gradient: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-chrome: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --accent-firefox: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            --accent-youtube: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+            --border-color: #334155;
         }
 
         body {
@@ -30,18 +31,19 @@
             background: var(--card-bg);
             padding: 40px 30px;
             border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
         }
 
         .hero {
             text-align: center;
             padding-bottom: 30px;
-            border-bottom: 2px solid #f1f5f9;
+            border-bottom: 2px solid var(--border-color);
         }
 
         .hero h1 {
             font-size: 2.4rem;
-            color: #0f172a;
+            color: #ffffff;
             margin-bottom: 15px;
             font-weight: 800;
         }
@@ -55,7 +57,7 @@
         }
 
         .highlight {
-            color: #2563eb;
+            color: #60a5fa;
             font-weight: 700;
         }
 
@@ -78,42 +80,42 @@
             border-radius: 10px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             color: #fff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
 
-        .btn-chrome { background: var(--primary-gradient); }
-        .btn-firefox { background: var(--firefox-gradient); }
-        .btn-youtube { background: var(--youtube-gradient); }
+        .btn-chrome { background: var(--accent-chrome); }
+        .btn-firefox { background: var(--accent-firefox); }
+        .btn-youtube { background: var(--accent-youtube); }
 
         /* حركة النبض الإشعاعي الجاذبة للعين */
-        @keyframes pulseGlow {
+        @keyframes pulseGlowChrome {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
             }
             70% {
                 transform: scale(1.02);
-                box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
+                box-shadow: 0 0 0 14px rgba(59, 130, 246, 0);
             }
             100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
             }
         }
 
         @keyframes pulseGlowFirefox {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
             }
             70% {
                 transform: scale(1.02);
-                box-shadow: 0 0 0 12px rgba(245, 158, 11, 0);
+                box-shadow: 0 0 0 14px rgba(245, 158, 11, 0);
             }
             100% {
                 transform: scale(1);
@@ -122,7 +124,7 @@
         }
 
         .pulse-chrome {
-            animation: pulseGlow 2.5s infinite ease-in-out;
+            animation: pulseGlowChrome 2.5s infinite ease-in-out;
         }
 
         .pulse-firefox {
@@ -134,7 +136,7 @@
         }
 
         .content-section h2 {
-            color: #1e293b;
+            color: #f1f5f9;
             font-size: 1.6rem;
             margin-bottom: 20px;
         }
@@ -151,25 +153,28 @@
         }
 
         .alert-box {
-            background-color: #eff6ff;
+            background-color: rgba(30, 58, 138, 0.35);
             border-right: 5px solid #3b82f6;
             padding: 18px 22px;
             border-radius: 8px;
             margin-top: 25px;
-            color: #1e40af;
+            color: #93c5fd;
             line-height: 1.7;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            border-left: 1px solid var(--border-color);
         }
 
         .footer {
             margin-top: 45px;
             padding-top: 25px;
-            border-top: 2px solid #f1f5f9;
+            border-top: 2px solid var(--border-color);
             text-align: center;
         }
 
         .prayer {
             font-size: 1.15rem;
-            color: #059669;
+            color: #34d399;
             margin-bottom: 15px;
             font-weight: 700;
         }
